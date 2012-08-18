@@ -22,10 +22,10 @@ Clock.prototype.run = function() {
         self.tick();
     }, 1000 * (function(){return self.warpFactor;})());
 };
-Clock.prototype.each = function(numberOfMilliseconds, callback) {
+Clock.prototype.each = function(callback, numberOfMilliseconds) {
     this.running = true;
     this.callback = callback;
-    this.eachTime = numberOfMilliseconds;
+    this.eachTime = numberOfMilliseconds || 1000;
     var self = this;
     var runningClock = setInterval(function() {
         if (!self.running) {

@@ -1,6 +1,6 @@
 function Clock(dateobj) {
     this.time = dateobj || new Date();
-    this.warpFactor = 1;
+    this.warp = 1;
     this.running = false;
     this.callback = null;
     this.eachTime = null;
